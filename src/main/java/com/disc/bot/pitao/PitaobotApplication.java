@@ -1,24 +1,15 @@
 package com.disc.bot.pitao;
 
-import javax.security.auth.login.LoginException;
-
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.boot.SpringBootConfiguration;
 
-import com.disc.bot.pitao.bot.MyBotListener;
+import com.disc.bot.pitao.bot.PitaoBot;
 
-import net.dv8tion.jda.api.JDA;
-import net.dv8tion.jda.api.JDABuilder;
-
-@SpringBootApplication
-@Configuration
-@ComponentScan
+@SpringBootConfiguration
 public class PitaobotApplication {
 	
-	public static void main(String[] args) throws LoginException {
-		SpringApplication.run(PitaobotApplication.class, args);
+	public static void main(String[] args){
+		SpringApplication.run(PitaoBot.class, args);
 	}
 
 }

@@ -13,37 +13,24 @@ public class PugController {
 	
 	private PugService pugService;
 	
+	public PugController () {
+		pugService = PugService.getInstance();
+	}
+	
 	public void redirectEvent(MessageReceivedEvent event) {
 		
 		if (event.getMessage().getContentRaw().startsWith(".pug start")) {
-
-			if (pugService == null) {
-				pugService = PugService.getInstance();
-			}
-			
 			pugService.startPug(event);
 		}
 		
 		if (event.getMessage().getContentRaw().startsWith(".pug pick"))	{
-			
-			if (pugService == null) {
-				pugService = PugService.getInstance();
-			}
-			
 			pugService.pickPlayer(event);
 		}
 		
 		if (event.getMessage().getContentRaw().startsWith(".pug ban")) {
-			
-			if (pugService == null) {
-				pugService = PugService.getInstance();
-			}
-			
 			pugService.banMap(event);
 		}
-
 		
 	}
-	
 	
 }

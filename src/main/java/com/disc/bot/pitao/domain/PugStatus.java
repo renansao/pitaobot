@@ -1,8 +1,5 @@
 package com.disc.bot.pitao.domain;
 
-import org.springframework.data.mongodb.core.mapping.Document;
-
-@Document("PugStatus")
 public class PugStatus {
 	
 	private String pugId;

@@ -4,15 +4,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
-
 import net.dv8tion.jda.api.entities.Member;
 
-@Document("PugCollection")
 public class PugDomain {
 	
-	@Id
 	private String pugId;
 	
 	private Member captain1;

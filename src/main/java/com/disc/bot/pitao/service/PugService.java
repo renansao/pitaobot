@@ -145,7 +145,7 @@ public class PugService{
 		}
 		
 		if (pugCached.getCurrentPick() > 8) {
-			event.getChannel().sendMessage("The player pick phase is now ended.").queue();
+			event.getChannel().sendMessage("The player pick phase has ended.").queue();
 			event.getChannel().sendMessage("Use '.pug ban {map}' to ban a map.").queue();
 			return;
 		}

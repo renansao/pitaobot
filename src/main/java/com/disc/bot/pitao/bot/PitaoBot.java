@@ -1,17 +1,13 @@
 package com.disc.bot.pitao.bot;
 
-import javax.annotation.PostConstruct;
 import javax.security.auth.login.LoginException;
-
-import org.springframework.stereotype.Component;
 
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 
-@Component
 public class PitaoBot {
 	
-	private static String SECRET_TOKEN = "NzI1MTc0MDcwNDU0NTE3ODAx.XvLGUQ.M1AQGmkSErFvYzBMTuHIzqAjlTo";
+	private static String SECRET_TOKEN = System.getenv("SECRET_TOKEN");
     
     public PitaoBot() {
     	this.init();
@@ -20,7 +16,9 @@ public class PitaoBot {
     public void init() {
     	
 	    try {
-	    	JDA jda = new JDABuilder(SECRET_TOKEN).addEventListeners(new MyBotListener()).build();
+	    	 JDA jda = JDABuilder.createDefault(SECRET_TOKEN).build();
+	    	 jda.addEventListener(new MyBotListener());
+	    	
 	    } catch (LoginException e) {
 	        e.printStackTrace();
 	    
